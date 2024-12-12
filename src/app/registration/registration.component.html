@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+      <h2 class="text-center mb-4">Registration Form</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="userName" class="form-label">Username</label>
+          <input
+            type="text"
+            id="userName"
+            class="form-control"
+            formControlName="userName"
+            placeholder="Enter your username"
+          />
+          <div *ngIf="registrationForm.controls['userName'].invalid && registrationForm.controls['userName'].touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <div *ngIf="registrationForm.controls['password'].invalid && registrationForm.controls['password'].touched" class="text-danger">
+            Password is required (min 6 characters).
+          </div>
+        </div>
+  
+        <!-- First Name -->
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            formControlName="firstName"
+            placeholder="Enter your first name"
+          />
+          <div *ngIf="registrationForm.controls['firstName'].invalid && registrationForm.controls['firstName'].touched" class="text-danger">
+            First name is required.
+          </div>
+        </div>
+  
+        <!-- Last Name -->
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            formControlName="lastName"
+            placeholder="Enter your last name"
+          />
+          <div *ngIf="registrationForm.controls['lastName'].invalid && registrationForm.controls['lastName'].touched" class="text-danger">
+            Last name is required.
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          <div *ngIf="registrationForm.controls['email'].invalid && registrationForm.controls['email'].touched" class="text-danger">
+            Enter a valid email address.
+          </div>
+        </div>
+  
+        <!-- Phone -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input
+            type="text"
+            id="phone"
+            class="form-control"
+            formControlName="phone"
+            placeholder="Enter your phone number"
+          />
+          <div *ngIf="registrationForm.controls['phone'].invalid && registrationForm.controls['phone'].touched" class="text-danger">
+            Phone is required.
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="registrationForm.invalid">
+          Submit
+        </button>
+      </form>
+    </div>
+</div>

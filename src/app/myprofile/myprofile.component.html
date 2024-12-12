@@ -1,0 +1,76 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">My Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="p-4 border rounded shadow-sm bg-light">
+      <div class="mb-3">
+        <label for="userName" class="form-label">Username</label>
+        <input
+          id="userName"
+          type="text"
+          class="form-control"
+          formControlName="userName"
+          [ngClass]="{ 'is-invalid': userName?.invalid && (userName?.dirty || userName?.touched) }"
+        />
+        <div class="invalid-feedback" *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)">
+          Username is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+          [ngClass]="{ 'is-invalid': firstName?.invalid && (firstName?.dirty || firstName?.touched) }"
+        />
+        <div class="invalid-feedback" *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+          First Name is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+          [ngClass]="{ 'is-invalid': lastName?.invalid && (lastName?.dirty || lastName?.touched) }"
+        />
+        <div class="invalid-feedback" *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          Last Name is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': email?.invalid && (email?.dirty || email?.touched) }"
+        />
+        <div class="invalid-feedback" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          Please provide a valid email.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input
+          id="phone"
+          type="text"
+          class="form-control"
+          formControlName="phone"
+          [ngClass]="{ 'is-invalid': phone?.invalid && (phone?.dirty || phone?.touched) }"
+        />
+        <div class="invalid-feedback" *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+          Please enter a valid 10-digit phone number.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="profileForm.invalid">Update Profile</button>
+    </form>
+  </div>
+  
